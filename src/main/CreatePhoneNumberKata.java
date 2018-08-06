@@ -10,6 +10,11 @@ package main;
 
 public class CreatePhoneNumberKata {
 	public static String createPhoneNumber(int[] numbers) {
+		for (int num : numbers) {
+			if (num > 9) {
+				throw new IllegalArgumentException();
+			}
+		}
 		StringBuilder stringBuilder = new StringBuilder();
 		stringBuilder.append("(" + numbers[0] + numbers[1] + numbers[2]);
 		stringBuilder.append(") " + numbers[3] + numbers[4] + numbers[5]);
